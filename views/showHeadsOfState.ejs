@@ -1,0 +1,27 @@
+<h1>Heads Of State</h1>
+
+<!-- gives link to add head of state -->
+<a href="/addHeadOfState"><button>Add Head Of State</button></a>
+
+<br><br>
+<!-- black border -->
+<table style="border: 2px ridge black;">
+    <tr>
+        <th style="border: 2px ridge black;">Country Code</th>
+        <th style="border: 2px ridge black;">Head Of State</th>
+    </tr>
+    <!-- reads in heads of states from mongo -->
+    <% headsOfState.forEach((headsOfState)=>
+        { %>
+        <tr>
+            <td style="border: 2px ridge black;">
+                <%= headsOfState._id %>
+            </td>
+            <td style="border: 2px ridge black;">
+                <%= headsOfState.headOfState %>
+            </td>
+        </tr>
+        <% }) %>
+</table>
+
+<a href="./">Home</a>

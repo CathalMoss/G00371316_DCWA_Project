@@ -1,0 +1,33 @@
+<h1>Countries</h1>
+
+<a class="btn btn-primary" href="/addCountry"><button>Add Country</button></a>
+<br></br>
+<!-- black border -->
+<table style="border: 2px ridge black;">
+    <tr>
+        <th style="border: 2px ridge black;">Country Code</th>
+        <th style="border: 2px ridge black;">Country Name</th>
+        <th style="border: 2px ridge black;">Country Details</th>
+        <th style="border: 2px ridge black;">Actions</th>
+        <th> </th>
+    </tr>
+    <!-- gives the option for update and delete on the country page -->
+    <%countries.forEach((country)=> { %>
+        <tr>
+
+            <td style="border: 2px ridge black;">
+                <%= country.co_code %>
+            </td>
+            <td style="border: 2px ridge black;">
+                <%= country.co_name %>
+            </td>
+            <td style="border: 2px ridge black;">
+                <%= country.co_details %>
+            </td>
+            <td style="border: 2px ridge black;"><a href="/updateCountry/<%= country.co_code %>">Update</a></td>
+            <td style="border: 2px ridge black;"><a href="/deleteCountry/<%= country.co_code %>">Delete</a></td>
+        </tr>
+        <% }) %>
+</table>
+
+<a href="./">Home</a>
